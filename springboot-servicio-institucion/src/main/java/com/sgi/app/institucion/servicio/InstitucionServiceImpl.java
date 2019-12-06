@@ -13,10 +13,21 @@ public class InstitucionServiceImpl implements IInstitucionService{
 
 	@Autowired
 	private IInstitucionDao institucionDao;
+	
 	@Override
 	public List<Institucion> findByIdUsuario(Long idusuario) {
 		return institucionDao.findByUsuarioid(idusuario);
 		
+	}
+	
+	@Override
+	public Institucion guardar(Institucion institucion) {
+		return institucionDao.save(institucion);
+	}
+
+	@Override
+	public Institucion modificar(Institucion institucion) {
+		return institucionDao.save(institucion);
 	}
 
 
